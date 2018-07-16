@@ -7,7 +7,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-
+ 
+ 
 "should add color to the statusline
 Plug 'itchyny/lightline.vim'
 
