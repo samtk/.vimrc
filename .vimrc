@@ -22,9 +22,34 @@ endif
 "Add fix folding for python
 Plug 'https://github.com/tmhedberg/SimpylFold'
 
-" Enable folding
-"set foldmethod=indent
-"set foldlevel=99
+"Auto indent when function spans multiple lines
+Plug 'https://github.com/vim-scripts/indentpython.vim'
+
+"Auto complete words
+Plug 'https://github.com/Valloric/YouCompleteMe'
+"remove preview window for auto complete
+set completeopt-=preview
+"let g:ycm_autoclose_preview_window_after_completion = 1
+
+
+"line numbering
+set nu
+
+"Set indent according to PEP (python) standards
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+"indent for js, html and css
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
 " Enable folding with the spacebar
 nnoremap <space> za
